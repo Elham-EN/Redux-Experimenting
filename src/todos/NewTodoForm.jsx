@@ -23,7 +23,9 @@ const NewTodoForm = ({ todos, onCreatePressed }) => {
           const isDuplicateText = todos.some(
             (todo) => todo.text === inputValue
           );
-          if (!isDuplicateText) {
+          if (inputValue === "") {
+            return alert("Cannot Create empty todo list :-(");
+          } else if (!isDuplicateText) {
             onCreatePressed(inputValue);
             //clear the content with empty string
             setInputValue("");
