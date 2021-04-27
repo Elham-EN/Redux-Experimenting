@@ -1,15 +1,15 @@
 export const CREATE_TODO = "CREATE_TODO";
 //Return an object
-export const createTodo = (text) => ({
+export const createTodo = (todo) => ({
   type: CREATE_TODO,
   //payload is an object with property text
-  payload: { text },
+  payload: { todo },
 });
 
 export const REMOVE_TODO = "REMOVE_TODO";
-export const removeTodo = (text) => ({
+export const removeTodo = (todo) => ({
   type: REMOVE_TODO,
-  payload: { text },
+  payload: { todo },
 });
 
 export const MARK_TODO_AS_COMPLETED = "MARK_TODO_AS_COMPLETED";
@@ -27,3 +27,22 @@ export const editTodo = (text) => ({
 //Next Step is to give the components in the application
 //access to the Redux store, so that they can see the current
 //state is and as well as trigger actions that modify the state.
+
+export const LOAD_TODOS_IN_PROGRESS = "LOAD_TODOS_IN_PROGRESS";
+
+export const loadTodosInProgress = () => ({
+  type: LOAD_TODOS_IN_PROGRESS,
+});
+
+export const LOAD_TODOS_SUCCESS = "LOAD_TODOS_SUCCESS";
+
+export const loadTodosSuccess = (todos) => ({
+  type: LOAD_TODOS_SUCCESS,
+  payload: { todos },
+});
+
+export const LOAD_TODOS_FAILURE = "LOAD_TODOS_FAILURE";
+
+export const loadTodosFailure = () => ({
+  type: LOAD_TODOS_FAILURE,
+});

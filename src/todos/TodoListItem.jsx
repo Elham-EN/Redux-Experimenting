@@ -8,6 +8,7 @@ const TodoListItem = ({
   onCompletePressed,
   onEditPressed,
 }) => {
+  console.log("Todo ID: ", todo.id);
   const [editValue, setEditValue] = useState(todo.text);
   const [clickEdit, setClickEdit] = useState(true);
   todo.text = editValue;
@@ -46,7 +47,7 @@ const TodoListItem = ({
         <button
           className="remove-button"
           onClick={() => {
-            onRemovePressed(editValue);
+            onRemovePressed(todo.id);
           }}
         >
           Remove

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-//Importing action creator
-import { createTodo } from "./actions";
+//Importing thunk
+import { addTodoRequest } from "./thunks";
 import "./NewTodoForm.css";
 
 const NewTodoForm = ({ todos, onCreatePressed }) => {
@@ -43,7 +43,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onCreatePressed: (text) => dispatch(createTodo(text)),
+  onCreatePressed: (text) => dispatch(addTodoRequest(text)),
 });
 
 //Connect our component to the redux store
